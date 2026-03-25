@@ -37,7 +37,6 @@ def crawl(url: str):
                 pass
 
 if __name__ == "__main__":
-    print(f"Exploration recursive de : {BASE_URL}\n")
     result = crawl(BASE_URL)
     if result:
         url, content = result
