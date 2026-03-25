@@ -1,0 +1,8 @@
+the .hidden/ repertory, found in the robots.txt contains a lot of subdirectory
+use the recursive.py's script to found readme with a size != 34
+--> "Demande a ton voisin de gauche" == 34 octets
+--> "Demande a ton voisin de droite" == 34 octets
+
+The script is searching for a Readme with a size != 34
+python3 recursive.py
+--> flag !
