@@ -1,0 +1,3 @@
+Inspect -> Application -> Cookies -> I_am_admin -> hash md5 = false
+Change the value to true (https://www.frameip.com/decrypter-dechiffrer-cracker-hash-md5/)
+--> flag !
