@@ -1,4 +1,11 @@
-root:437394baff5aa33daa618be47b75cb49 == qwerty123@ en md5
+root:437394baff5aa33daa618be47b75cb49 == qwerty123@ in md5
 https://crackstation.net/
 
-.htppasswd dans robots.txt / whatever/
+found it in .htppasswd in robots.txt -> whatever
+
+then go to /admin page
+
+then enter username:root
+password:qwerty123@
+
+--> Flag!
