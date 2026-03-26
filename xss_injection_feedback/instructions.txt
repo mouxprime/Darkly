@@ -1,0 +1,10 @@
+In the feedback page:
+
+On peut voir qu'il y a deux champs input.
+Que quand on met une balise html, elle est reconnue
+
+On met met dans le name "test"
+et dans le message "<svg/onload=alert('XSS')>a"
+
+Flag !
+
