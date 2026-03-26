@@ -1,0 +1,9 @@
+Sur la page des sondages
+
+On peut voir que Wil a une moyenne de note de 4200+ et qu'il a eu 4200 votes
+
+Or, on peut voter entre 1 et 10 : bizarre
+
+On change la valeur du 10 pour mettre 100000 en inspectant
+
+Flag !
