@@ -1,0 +1,6 @@
+Sur le footer, on peut voir des pages de redirect
+facebook, twitter, insta
+
+On prend l'URL de redirect, et on change facebook par google
+
+flag !
