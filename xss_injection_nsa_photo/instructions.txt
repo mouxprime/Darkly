@@ -1,0 +1,20 @@
+le logo de la NSA est la seule image sur laquelle on peut cliquer
+Dans l'URL, on essaie de rajouter des parametres genre
+--> http://192.168.64.2/?page=media&src=nsa&pagrtbrbr
+
+Ca ne ko pas donc on essaie de mettre un script
+http://192.168.64.2/?page=media&src=nsa&%3Cscript%3Ealert(1)%3C/script%3E
+Le script s'execute mais pas de flag
+
+On essaie d'autres script http://192.168.64.2/?page=media&src=nsa&javascript:alert(1)
+
+On n'arrive pas a declancher le flag malgre le fait que le script passes
+On passe le flag en base 64 pour que les slashs passent 
+
+Car une protection anti-slash existe sur certains sites web.
+
+On passe donc ce script en base 64 et on precise dans le HTNL que c'est un base 64
+
+http://192.168.64.2/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+
+Flag !
