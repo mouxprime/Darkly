@@ -1,5 +1,6 @@
 Sur l'url dans le copyright de base ca nous renvoie la page de l'albatros
 Mais si on change le browser utilise et la page d'ou l'on viens avec un curl ca nous renvoie une autre page html avec le flag
+C'est precise dans les commentaire de la page html
 curl -G "http://localhost:8080/" \
 --data-urlencode "page=b7e44c7a40c5f80139f0a50f3650fb2bd8d00b0d24667c4c2ca32c88e13b758f" \
 -H "Referer: https://www.nsa.gov/" \
