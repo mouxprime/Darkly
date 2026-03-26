@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-BASE_URL = "http://192.168.1.16/.hidden/"
+BASE_URL = "http://localhost:8080/.hidden/"
 IGNORE_SIZE = 34
 
 def crawl(url: str):
