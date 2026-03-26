@@ -1,0 +1,5 @@
+Sur la page de connexion (login) on peut voir que les logins et mots de passes sont passes dans l'URL
+METHODE GET utilisee pour envoyer le formulaire
+si on fait dans l'URL page=../../../../../../../../../../../../etc/passwd
+
+flag !
